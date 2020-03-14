@@ -1,0 +1,38 @@
+<h1>Dragons!</h1>
+
+<h2>Dragons can embody virtue, purity, and honor.  But they can always choose to reject them.</h2>
+
+<ul>
+  {{#each dragons}}
+    {{#unless evil}}
+      {{> dragons/dragon-block evil=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Dragons are oft consumed by rage, greed, and ego.  But, they can always be reedemed and rise again.<br />If it is possible for the these primal monsters, how can it not be for humans? </h2>
+
+<ul>
+  {{#each dragons}}
+    {{#if evil}}
+      {{> dragons/dragon-block evil=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Dragon</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca">Dragon Name:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="sleepy">Evil?</label><br>
+    <input type="radio" name="evil" value="1" checked> Evil!<br>
+    <input type="radio" name="evil" value="0"> Reedemed!
+  </div>
+
+  <button type="submit">Add the Dragon!</button>
+</form>
