@@ -8,12 +8,12 @@ $(function() {
       };
   
       
-      $.ajax("/api/dragons/" + id, {
+      $.ajax("/api/dragon/" + id, {
         type: "PUT",
         data: newmorality
       }).then(
         function() {
-          console.log("changed sleep to", newmorality);
+          console.log("changed morality to", newmorality);
 
           location.reload();
         }
@@ -28,7 +28,7 @@ $(function() {
         evil: $("[name=evil]:checked").val().trim()
       };
   
-      $.ajax("/api/dragons", {
+      $.ajax("/api/dragon", {
         type: "POST",
         data: newDragon
       }).then(

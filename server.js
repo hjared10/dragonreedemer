@@ -4,10 +4,14 @@ var PORT = process.env.PORT || 8080;
 
 var app = express();
 
+var compression = require('compression')
+
 app.use(express.static("public"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use(compression())
 
 var exphbs = require("express-handlebars");
 

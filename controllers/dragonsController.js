@@ -14,7 +14,7 @@ router.get("/", function(req, res) {
   });
 });
 
-router.post("/api/dragons", function(req, res) {
+router.post("/api/dragon", function(req, res) {
   dragon.create([
     "name", "evil"
   ], [
@@ -24,7 +24,7 @@ router.post("/api/dragons", function(req, res) {
   });
 });
 
-router.put("/api/dragons/:id", function(req, res) {
+router.put("/api/dragon/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
   console.log("condition", condition);
@@ -40,7 +40,7 @@ router.put("/api/dragons/:id", function(req, res) {
   });
 });
 
-router.delete("/api/dragons/:id", function(req, res) {
+router.delete("/api/dragon/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
   dragon.delete(condition, function(result) {
